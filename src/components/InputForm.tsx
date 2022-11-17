@@ -1,11 +1,14 @@
 import React, {useState} from 'react'
 
 const App: React.FC = () => {
-  const [todo, setTodo] = useState('')
+  const [todo, setTodo] = useState<string>('')
+  const [todos, setTodos] = useState([])
   
   return (
-    <div>: React.FC</div>
-  )
+    <div>
+
+    </div>
+  );
 }
 
 export default App;

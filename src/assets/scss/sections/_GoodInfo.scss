@@ -1,0 +1,53 @@
+.good-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        padding-top: 30px;
+        border-top: 1px solid $color-gray-1;
+        
+    }
+    
+}
+
+.info-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 46px;
+    height: 46px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 6px 6px 2px $color-gray-6;
+}
+
+.info-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-20;
+    font-weight: $font-weight-bold;
+    font-family: $font-poppins;
+    
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    width: 250px;
+    font-family: $font-poppins;
+    color: $color-gray-5;
+}

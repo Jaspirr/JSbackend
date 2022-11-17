@@ -1,0 +1,29 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-gray-6;
+    padding: 25px;
+
+    .socialmedia {
+        margin-bottom: 25px;
+
+        a {
+            color: $color-theme-dark;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: $font-size-20;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            &:hover {
+                color: $color-theme;
+            }
+        }
+
+        .copyright {
+            font-family: $font-poppins;
+        }
+    }
+}

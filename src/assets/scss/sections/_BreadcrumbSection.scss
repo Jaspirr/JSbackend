@@ -1,0 +1,34 @@
+.breadcrumb {
+    margin-top: 100px;
+
+    .container {
+        max-width: 1110px;
+
+    }
+
+    .breadcrumb-list {
+        list-style: none;
+        margin: 0 0 40px 0;
+        padding: 0;
+        color: $color-theme;
+
+        li {
+            display: inline-block;
+            font-weight: $font-weight-medium;
+
+            a {
+                color: $color-theme-dark;
+
+                &:hover {
+                    color: $color-theme;
+                }
+            }
+
+            & + li:before {
+                content: "\00a0\00a0>\00a0\00a0";
+                font-weight: $font-weight-regular;
+                color: $color-theme-dark;
+            }
+        }
+    }
+}

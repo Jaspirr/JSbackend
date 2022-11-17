@@ -1,0 +1,120 @@
+.inspo {
+    display: flex;
+    
+    .container {
+    max-width: 1200px;
+    position: relative;
+
+    }
+
+}
+
+
+.pamela {
+    height: 550px;
+    width: 560px;
+}
+.lets-be {
+    height: 550px;
+    width: 560px;
+    margin-left: 50px;
+}
+
+.lets-be-title {
+    position: absolute;
+    top: 190px;
+    right: 345px;
+    font-size: $font-size-35;
+    font-weight: $font-weight-bold;
+    width: 140px;
+}
+
+.pamela-title {
+    position: absolute;
+    top: 170px;
+    right: 645px;
+    width: 250px;
+    height: 150px;
+    font-size: $font-size-35;
+    font-weight: $font-weight-bold;
+    text-align: left;
+}
+
+#pamela-btn {
+    position: absolute;
+    top: 310px;
+    right: 710px;
+    width: 180px;
+    height: 60px;
+    font-weight: 500;
+    font-size: $font-size-13;
+    z-index: 1;
+}
+#lets-be-btn {
+    position: absolute;
+    top: 310px;
+    right: 330px;
+    width: 180px;
+    height: 60px;
+    font-weight: 500;
+    font-size: $font-size-13;
+    z-index: 1;
+}
+
+@media (max-width: 1200px) {
+    .inspo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .pamela-title {
+        position: absolute;
+        top: 170px;
+        left: 320px;
+        width: 250px;
+        height: 150px;
+        font-size: $font-size-35;
+        font-weight: $font-weight-bold;
+        text-align: left;
+    }
+    
+    #pamela-btn {
+        position: absolute;
+        top: 310px;
+        left: 320px;
+        width: 180px;
+        height: 60px;
+        font-weight: 500;
+        font-size: $font-size-13;
+        z-index: 1;
+    }
+    .lets-be {
+        position: absolute;
+        top: 555px;
+        left: 30px;
+        height: 550px;
+        width: 560px;
+        margin-left: 0px;
+        margin-bottom: 100px;
+    }
+    .lets-be-title {
+        position: absolute;
+        top: 745px;
+        left: 70px;
+        font-size: $font-size-35;
+        font-weight: $font-weight-bold;
+        width: 140px;
+        z-index: 1;
+    }
+    #lets-be-btn {
+        position: absolute;
+        top: 850px;
+        left: 50px;
+        width: 180px;
+        height: 60px;
+        font-weight: 500;
+        font-size: $font-size-13;
+        z-index: 1;
+    }
+    
+}

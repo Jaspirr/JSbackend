@@ -1,0 +1,135 @@
+.mainmenu {
+    display: grid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "brand menuicons"
+                         "menulinks menulinks";
+   
+        
+    }
+
+    .brand {
+        grid-area: brand;
+        color: $color-theme-dark;
+        font-size: $font-size-35;
+        font-family: $font-poppins;
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+        
+        &:hover {
+            color: $color-theme-dark;
+            text-decoration: none;
+        }
+    }
+
+    .menu-links {
+        grid-area: menulinks;
+        display: none;
+        height: 100%;
+        overflow: hidden;
+        font-weight: $font-weight-regular;
+       
+        .menu-link {
+            color: $color-theme-dark;
+            font-size: $font-size-16;
+            font-family: $font-poppins;
+            font-weight: $font-weight-medium;
+            text-decoration: none;
+            margin: 10px 15px;
+          
+            &:hover {
+                color: $color-theme;
+                text-decoration: none;
+            }
+           
+        }
+
+        .active {
+            color: $color-theme;
+            text-decoration: none;
+        }
+    }
+
+    .menu-icons {
+        grid-area: menuicons;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .menu-icon {
+            
+            background-color: $color-white;
+            color: $color-theme-dark;
+            width: 36px;
+            height: 36px;
+            margin-left: 20px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 6px 4px $color-shadow;
+            position: relative;
+            transition: all 0.1s ease-in-out;
+
+            &:hover {
+                color: $color-white;
+                background-color: $color-theme-dark;
+                box-shadow: 0 0 6px 4px $color-shadow;
+                text-decoration: none;
+            }
+
+
+
+        .active {
+            color: $color-white;
+            background-color: $color-theme-dark;
+            box-shadow: 0 0 6px 4px $color-shadow;
+            text-decoration: none;
+        }
+
+        .btn-menu-icon {
+            color: $color-white;
+            background-color: $color-theme-dark;
+            box-shadow: 0 0 6px 4px $color-shadow;
+            border: none;
+        }
+
+        button {
+            border: none;
+        }
+    }
+}
+
+// varför jag kör 1400px istället för 1200px är för att halva contacts skymdes av menuicons delen under 1400px. 
+@media (min-width: 1400px) {
+.container {
+    max-width: 1200px;
+}
+
+.mainmenu {
+    display: grid;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    right: 0%;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-areas: "brand menulinks menuicons";
+    padding-top: 20px;
+    padding-bottom: 20px;
+        
+    .menu-links {
+        grid-area: menulinks;
+        display: flex;
+        width: 100%;
+        font-weight: $font-weight-regular; 
+        height: 100%;
+
+       
+    }   
+}
+
+
+}

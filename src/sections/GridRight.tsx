@@ -2,20 +2,25 @@ import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { SaleContext } from '../contexts/contexts'
+import { Product } from '../models/Products'
 
-const GridRight = ({items = []}) => {
+interface Props {
+    items: any
+    product: any
+}
+
+const GridRight: React.FC<Props> = ({items = []}) => {
 
     const products = useContext(SaleContext)
 
   return (
-    // Andra griden.
     <section>
         <div className="grid-right">
             <div className="container">
                 <div className="min-right">
                     <div className="row row-cols-1 row-cols-md-2 g-4 mt-5">
                     {
-                    items.map( product => <ProductCard key={product.articleNumber} item={product} />)
+                    items.map( (product: { articleNumber: React.Key | null | undefined }) => <ProductCard key={product.articleNumber} item={product} />)
                     }
                     </div>
                 </div> 

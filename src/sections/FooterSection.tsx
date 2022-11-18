@@ -1,7 +1,7 @@
 import React from 'react'
 import ExternalLinkIcon from '../components/ExternalLinkIcon'
 
-const FooterSection = () => {
+const FooterSection: React.FC = () => {
   return (
     // längst ner på sidans alla tabbar.
     <footer>

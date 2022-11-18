@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import img2 from '../assets/images/showcase-img-2.png'
-const TopSaleSection = () => {
+
+const TopSaleSection: React.FC = () => {
   
     return (
     // Top sale sektion.

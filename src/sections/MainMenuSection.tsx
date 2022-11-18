@@ -4,7 +4,7 @@ import MenuIcon from '../components/MenuIcon'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
 
 
-let MainMenuSection: React.FC = () => {
+const MainMenuSection: React.FC = () => {
     const [showMenu, setShowMenu] = useState(false)
     const { cartQuantity } = useShoppingCart()
 
@@ -13,8 +13,7 @@ let MainMenuSection: React.FC = () => {
     }
     
     return (
-        // Top meny 
-        <nav className="mainmenu container">
+        <nav className="main-menu container">
             <NavLink className="brand" to="/" end>Fixxo.</NavLink>
             <div className={`menu-links ${ showMenu ? "d-grid" : "" }`}>
                 <NavLink className="menu-link" to="/" end>Home</NavLink>
@@ -40,4 +39,4 @@ let MainMenuSection: React.FC = () => {
     )
 }
 
-export let MainMenuSection
+export default MainMenuSection

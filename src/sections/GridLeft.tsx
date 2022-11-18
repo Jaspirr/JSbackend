@@ -3,12 +3,15 @@ import { NavLink } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { SaleContext } from '../contexts/contexts'
 
-const GridLeft = ({items = []}) => {
+interface Props {
+    items: any
+}
+
+const GridLeft: React.FC<Props> = ({items = []}) => {
 
     const products = useContext(SaleContext)
     
   return (
-    // Första griden
     <section>
         <div className="grid-left">
             <div className="container">
@@ -25,7 +28,7 @@ const GridLeft = ({items = []}) => {
                 <div className="min">
                     <div className="row row-cols-1 row-cols-md-2 g-4 mt-5">
                     {
-                    items.map( product => <ProductCard key={product.articleNumber} item={product} />)
+                    items.map( (product: { articleNumber: React.Key | null | undefined }) => <ProductCard key={product.articleNumber} item={product} />)
                     }
                     </div>
                 </div>

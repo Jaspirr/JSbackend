@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const GoodInfo = () => {
+export const GoodInfo: React.FC = () => {
   return (
     // bra info om sidan.
     <section className="good-info">

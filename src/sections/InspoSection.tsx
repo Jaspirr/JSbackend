@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import img1 from '../assets/images/pamela.svg'
 import img2 from '../assets/images/lets-be.svg'
 
-const InspoSection = () => {
+const InspoSection: React.FC = () => {
   return (
     // Insperation för kunderna.
     <section className="inspo">

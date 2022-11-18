@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom'
 import FooterSection from '../sections/FooterSection'
 import BreadcrumbSection from '../sections/BreadcrumbSection'
 import ProductGridSection from '../sections/ProductGridSection'
-import { MainMenuSection } from '../sections/MainMenuSection'
+import MainMenuSection from '../sections/MainMenuSection'
 
-const ProductDetailsView = () => {
+const ProductDetailsView: React.FC = () => {
     const {id} = useParams()
     const [product, setProduct] = useState({})
   
@@ -22,7 +22,7 @@ const ProductDetailsView = () => {
     <>
         <MainMenuSection />
         <BreadcrumbSection currentPage="Products" />
-        <ProductGridSection product={product} />
+        <ProductGridSection items={product} articleNumber={''} title={''} />
         <FooterSection />
     
     </>

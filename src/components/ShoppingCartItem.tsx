@@ -2,8 +2,11 @@ import React from 'react'
 import { useShoppingCart } from '../contexts/ShoppingCartContext'
 import { currencyFormatter } from '../utilities/currencyFormatter'
 
+interface Props {
+    item: any
+}
 
-const ShoppingCartItem = ({item}) => {
+const ShoppingCartItem: React.FC<Props> = ({item}) => {
     const { incrementQuantity, decrementQuantity, removeItem } = useShoppingCart()
 
 

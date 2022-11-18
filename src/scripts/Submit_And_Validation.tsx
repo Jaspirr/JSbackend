@@ -1,6 +1,8 @@
 // Validering av formuläret
 
-export const submitData = async (url, method, data, contentType = 'application/json') => {
+
+
+export const submitData = async (url: RequestInfo | URL, method: string, data: string, contentType = 'application/json') => {
     
     const res = await fetch(url, {
         method: method,
@@ -17,9 +19,10 @@ export const submitData = async (url, method, data, contentType = 'application/j
     return false
   
 }
+export default submitData
 
 
-export const validate = (e, form = null) => {
+export const validate = (e: { type: string; target: { id: any; value: any } }, form = null) => {
     if (e.type === 'submit') {
         const errors = {}
         errors.name = validate_name(form.name)
@@ -42,7 +45,7 @@ export const validate = (e, form = null) => {
 }
 
 
-const validate_name = (value) => {
+const validate_name = (value: string | any[]) => {
     if (!value)
         return 'A name is required'
     else if (value.length < 2)
@@ -51,7 +54,7 @@ const validate_name = (value) => {
         return null
 }
 
-const validate_email = (value) => {
+const validate_email = (value: string) => {
     const regex_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if (!value)
         return 'A email address is required'
@@ -60,7 +63,7 @@ const validate_email = (value) => {
     else 
         return null
 }
-const validate_comments = (value) => {
+const validate_comments = (value: string | any[]) => {
     if (!value)
         return 'A comment is required'
     else if (value.length < 6)

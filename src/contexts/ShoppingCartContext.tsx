@@ -1,4 +1,10 @@
+import React from 'react';
 import ShoppingCart from '../components/ShoppingCart';
+
+interface Props {
+    children: any
+    articleNumber: number
+}
 
 const { createContext, useContext, useState } = require('react');
 
@@ -8,21 +14,21 @@ export const useShoppingCart = () => {
     return useContext(ShoppingCartContext)
 }
 
-export const ShoppingCartProvider = ({children}) => {
+export const ShoppingCartProvider: React.FC<Props> = ({children}) => {
     const [cartItems, setCartItems] = useState([])
 
     const cartQuantity = cartItems.reduce(
-        (quantity, item) => item.quantity + quantity, 0
+        (quantity: any, item: { quantity: any; }) => item.quantity + quantity, 0
     )
 
-    const getItemQuantity = (articleNumber) => {
-        return cartItems.find(item => item.articleNumber === articleNumber)?.quantity || 0
+    const getItemQuantity = (articleNumber: any) => {
+        return cartItems.find((item: { articleNumber: any; }) => item.articleNumber === articleNumber)?.quantity || 0
     }
 
-    const incrementQuantity = (cartItem) => {
+    const incrementQuantity = (cartItem: { articleNumber: any; product: any; }) => {
         const  {articleNumber, product} = cartItem
 
-        setCartItems(items => {
+        setCartItems((items: any[]) => {
             if (items.find(item => item.articleNumber === articleNumber) == null) {
                 return [...items, { articleNumber, product, quantity: 1}]
             } else {
@@ -37,10 +43,10 @@ export const ShoppingCartProvider = ({children}) => {
         })
     }
 
-    const decrementQuantity = (cartItem) => {
+    const decrementQuantity = (cartItem: { articleNumber: any; }) => {
         const  {articleNumber} = cartItem
 
-        setCartItems(items => {
+        setCartItems((items: any[]) => {
             if (items.find(item => item.articleNumber === articleNumber).quantity === 1) {
                 return items.filter(item => item.articleNumber !== articleNumber)
             } else {
@@ -55,14 +61,14 @@ export const ShoppingCartProvider = ({children}) => {
         })
     }
 
-    const removeItem = (articleNumber) => {
-        setCartItems(items => {
+    const removeItem = (articleNumber: any) => {
+        setCartItems((items: any[]) => {
             return items.filter(item => articleNumber !== articleNumber)
         })
     }
 
     return <ShoppingCartContext.Provider value={{cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem}}>
         {children}
-        <ShoppingCart />
+        <ShoppingCart item={undefined} />
     </ShoppingCartContext.Provider>
 }

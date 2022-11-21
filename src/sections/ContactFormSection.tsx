@@ -1,15 +1,28 @@
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { submitData, validate } from '../scripts/Submit_And_Validation'
 
-const ContactFormSection = () => {
+export interface Props {
+    id?: string
+    name?: string
+    email?: string
+    comments?: string | null
+}
+
+export interface IErrors {
+    name?: string | null,
+    email?: string | null,
+    comments?: string | null,
+}
+
+const ContactFormSection: React.FC = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [comments, setComments] = useState('')
-    const [errors, setErrors] = useState({})
-    const [submitted, setSubmitted] = useState('')
-    const [failedSubmit, setFailedSubmit] = useState('')
+    const [errors, setErrors] = useState<IErrors>({})
+    const [submitted, setSubmitted] = useState(false)
+    const [failedSubmit, setFailedSubmit] = useState(false)
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
         const {id, value} = e.target
         
         switch(id) {
@@ -24,10 +37,10 @@ const ContactFormSection = () => {
                 break
         }
 
-        setErrors({...errors,[id]: validate(e)})
+        setErrors(validate(e, null))
     }
    
-    const handelSubmit = async (e) => {
+    const handelSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setFailedSubmit(false)
         setSubmitted(false)

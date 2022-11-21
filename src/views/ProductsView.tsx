@@ -5,7 +5,7 @@ import MainMenuSection from '../sections/MainMenuSection'
 import ProductGridSection from '../sections/ProductGridSection'
 import { ProductContext } from '../contexts/contexts'
 
-const ProductsView = () => {
+const ProductsView: React.FC = () => {
   const products = useContext(ProductContext)
 
   return (

@@ -1,5 +1,9 @@
 import {createContext} from 'react'
 
-export const ProductContext = createContext()  
-export const FeaturedProductsContext = createContext()
-export const SaleContext = createContext()
+interface AppContextInterface {
+    
+}
+
+export const ProductContext = createContext<AppContextInterface | null>(null); 
+export const FeaturedProductsContext = createContext<AppContextInterface | null>(null);
+export const SaleContext = createContext<AppContextInterface | null>(null);

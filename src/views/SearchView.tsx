@@ -2,7 +2,7 @@ import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import MainMenuSection from '../sections/MainMenuSection'
 
-const SearchView = () => {
+const SearchView: React.FC = () => {
   return (
     <>
       <MainMenuSection />

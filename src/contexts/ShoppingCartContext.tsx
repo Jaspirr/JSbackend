@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import ShoppingCart from '../components/ShoppingCart';
 
-interface Props {
+interface IShopping {
     children: any
-    articleNumber: number
 }
 
 const { createContext, useContext, useState } = require('react');
@@ -14,7 +13,7 @@ export const useShoppingCart = () => {
     return useContext(ShoppingCartContext)
 }
 
-export const ShoppingCartProvider: React.FC<Props> = ({children}) => {
+export const ShoppingCartProvider: React.FC<IShopping> = ({children}) => {
     const [cartItems, setCartItems] = useState([])
 
     const cartQuantity = cartItems.reduce(

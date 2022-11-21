@@ -1,8 +1,7 @@
 // Validering av formuläret
+import { IErrors } from "../sections/ContactFormSection"
 
-
-
-export const submitData = async (url: RequestInfo | URL, method: string, data: string, contentType = 'application/json') => {
+export const submitData = async (url: string, method: string, data: string, contentType = 'application/json') => {
     
     const res = await fetch(url, {
         method: method,
@@ -21,27 +20,43 @@ export const submitData = async (url: RequestInfo | URL, method: string, data: s
 }
 export default submitData
 
+export interface IValidate {
+    name?: string | null;
+    email?: string | null;
+    comments?: string | null;
+}
 
-export const validate = (e: { type: string; target: { id: any; value: any } }, form = null) => {
+interface IFrom {
+    name: string
+    email: string
+    comments: string
+}
+
+
+export const validate = (e: any, form: IFrom | null) => {
+    let errors : IErrors = {}
     if (e.type === 'submit') {
-        const errors = {}
-        errors.name = validate_name(form.name)
-        errors.email = validate_email(form.email)
-        errors.comments = validate_comments(form.comments)
-        return errors
+        errors.name = validate_name(form!.name)
+        errors.email = validate_email(form!.email)
+        errors.comments = validate_comments(form!.comments)
+    
 
     } else {
         const {id, value} = e.target
         switch(id) {
             case 'name': 
-                return validate_name(value)
+                errors = {...errors, [id]:validate_name(value)}
+                break;
             case 'email': 
-                return validate_email(value)
+                errors = {...errors, [id]:validate_email(value)}
+                break;
             case 'comments': 
-                return validate_comments(value)
+                errors = {...errors, [id]:validate_comments(value)}
+                break;
            
         }
     }
+    return errors
 }
 
 

@@ -5,7 +5,7 @@ import MapSection from '../sections/MapSection'
 import ContactFormSection from '../sections/ContactFormSection'
 import FooterSection from '../sections/FooterSection'
 
-const ContactsView = () => {
+const ContactsView: React.FC = () => {
 
     return (
         <>

@@ -12,7 +12,7 @@ const ProductsView: React.FC = () => {
     <>
         <MainMenuSection />
         <BreadcrumbSection currentPage="Products" />
-        <ProductGridSection title="Products" items={products} articleNumber={''}/>
+        <ProductGridSection title="Products" items={products} articleNumber={''} products={[]}/>
         <FooterSection />
     </>
   )

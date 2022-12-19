@@ -7,7 +7,7 @@ interface Props {
   item: any 
 }
 
-const PoductCard: React.FC<Props> = ({item}) => {
+const ProductCard: React.FC<Props> = ({item}) => {
   const { incrementQuantity } = useShoppingCart()
 
   return (
@@ -43,4 +43,4 @@ const PoductCard: React.FC<Props> = ({item}) => {
   )
 }
 
-export default PoductCard
+export default ProductCard

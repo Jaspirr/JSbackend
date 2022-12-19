@@ -21,7 +21,7 @@ const HomeView: React.FC = () => {
         <>
             <MainMenuSection />
             <TopSaleSection />
-            <ProductGridSection title="Featured Products" items={products} articleNumber={''}/>
+            <ProductGridSection title="Featured Products" items={products} articleNumber={''} products={[]}/>
             <InspoSection />
             <GridLeft items={sale}/>
             <GridRight items={sale} product={undefined}/>

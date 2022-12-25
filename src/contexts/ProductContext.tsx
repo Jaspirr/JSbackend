@@ -1,11 +1,12 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext} from 'react';
 import { createContext } from 'react';
 import { IProductContextType } from '../models/Products';
 import { Product, ProductRequest } from "../models/ProductModel"
 
-export interface Props {
+export interface IProductProviderType  {
   children: any
 }
+
 export interface ProductContext {
   product: Product
   products: Product[]
@@ -24,9 +25,9 @@ export const useProductContext = () => {
 
 export const ProductContext = createContext<IProductContextType | any>(null)
 
-export const ProductProvider: React.FC<Props> = ({children}) => {
+export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
   const baseUrl= 'http://localhost:5000/api/products'
-  const EMPTY_PRODUCT: Product = { articleNumber: '', name:'', category: '', price: 0, imageURL: ''}
+  const EMPTY_PRODUCT: Product = { tag: '', articleNumber: '', name:'', description: '', category: '', price: 0, imageURL: ''}
   
   const [product, setProduct] = useState<Product>(EMPTY_PRODUCT)
   const [products, setProducts] = useState<Product[]>([])

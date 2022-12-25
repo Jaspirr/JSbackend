@@ -10,7 +10,7 @@ export interface ProductRequest {
 }
 
 export interface Product {
-   
+    tag: string
     imageURL?: string
     articleNumber?: string
     name: string
